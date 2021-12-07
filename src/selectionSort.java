@@ -1,3 +1,5 @@
+// Selection sort: O(n^2) time complexity
+
 public class selectionSort {
 
     public static void main(String[] args) {
