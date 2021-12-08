@@ -8,6 +8,8 @@ public class Node {
         this.data = data;
     }
 
+    public Node(){}
+
     public int getData() {
         return data;
     }
@@ -22,5 +24,10 @@ public class Node {
 
     public void setNextNode(Node nextNode) {
         this.nextNode = nextNode;
+    }
+
+    @Override
+    public String toString(){
+        return "Data: " + this.data;
     }
 }
