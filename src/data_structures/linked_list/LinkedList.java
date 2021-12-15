@@ -25,12 +25,30 @@ public class LinkedList {
 
     public int length(){
         Node current = this.head;
-        int size = 0;
+        int counter = 0;
+
         while(current != null){
-            size++;
+            counter++;
             current = current.getNextNode();
         }
-        return size;
+        return counter;
+    }
+
+    public void deleteFromHead(){
+        this.head = this.head.getNextNode();
+    }
+
+    public Node find(int data){
+        Node current = this.head;
+
+        while(current != null){
+            if(data == current.getData()){
+                return current;
+            }
+            current = current.getNextNode();
+        }
+        //nada foi encontrado
+        return null;
     }
 
     @Override

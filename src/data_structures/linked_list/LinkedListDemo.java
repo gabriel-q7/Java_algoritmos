@@ -11,5 +11,6 @@ public class LinkedListDemo {
 
         System.out.println(list);
         System.out.println(list.length());
+        System.out.println(list.find(15));
     }
 }
