@@ -23,6 +23,16 @@ public class LinkedList {
         this.head = newNode;
     }
 
+    public int length(){
+        Node current = this.head;
+        int size = 0;
+        while(current != null){
+            size++;
+            current = current.getNextNode();
+        }
+        return size;
+    }
+
     @Override
     public String toString(){
         String result = "{";
