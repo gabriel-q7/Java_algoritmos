@@ -4,14 +4,31 @@ public class DoublyLinkedList {
     private DoublyLinkedNode head;
     private DoublyLinkedNode tail;
 
+    public boolean isEmpty(){
+        return this.head == null;
+    }
+
     public void insertAtHead(int data){
         DoublyLinkedNode newNode = new DoublyLinkedNode(data);
-        newNode.setNextNode(this.head);
 
-        if (this.head != null)
+        if (isEmpty()) {
+            tail = newNode;
+        } else {
             this.head.setPrevNode(newNode);
-
+        }
+        newNode.setNextNode(this.head);
         this.head = newNode;
+    }
+
+    public void insertAtTail(int data){
+        DoublyLinkedNode newNode = new DoublyLinkedNode(data);
+
+        newNode.setPrevNode(this.tail);
+
+        if(this.tail != null)
+            this.tail.setNextNode(newNode);
+
+        this.tail = newNode;
     }
 
     private int length(){
