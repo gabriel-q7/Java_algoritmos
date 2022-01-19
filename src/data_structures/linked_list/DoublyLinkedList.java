@@ -4,33 +4,6 @@ public class DoublyLinkedList {
     private DoublyLinkedNode head;
     private DoublyLinkedNode tail;
 
-    public boolean isEmpty(){
-        return this.head == null;
-    }
-
-    public void insertAtHead(int data){
-        DoublyLinkedNode newNode = new DoublyLinkedNode(data);
-
-        if (isEmpty()) {
-            tail = newNode;
-        } else {
-            this.head.setPrevNode(newNode);
-        }
-        newNode.setNextNode(this.head);
-        this.head = newNode;
-    }
-
-    public void insertAtTail(int data){
-        DoublyLinkedNode newNode = new DoublyLinkedNode(data);
-
-        newNode.setPrevNode(this.tail);
-
-        if(this.tail != null)
-            this.tail.setNextNode(newNode);
-
-        this.tail = newNode;
-    }
-
     private int length(){
         if(head == null) return 0;
 
@@ -40,9 +13,43 @@ public class DoublyLinkedList {
             length++;
             current.getNextNode();
         }
-
         return length;
     }
+
+    public boolean isEmpty(){
+        return this.length() == 0;
+    }
+
+    public void insertAtHead(int data){
+        DoublyLinkedNode newNode = new DoublyLinkedNode(data);
+
+        if (isEmpty()) {
+            tail = newNode;
+        } else {
+            this.head.setPrevNode(newNode);
+            newNode.setNextNode(this.head);
+        }
+
+        this.head = newNode;
+    }
+
+    public void insertAtTail(int data){
+        DoublyLinkedNode newNode = new DoublyLinkedNode(data);
+
+        if(isEmpty()){
+            head = newNode;
+        } else {
+            this.tail.setNextNode(newNode);
+            newNode.setPrevNode(this.tail);
+        }
+
+        this.tail = newNode;
+    }
+
+    public void insert(int data){
+
+    }
+
 
     @Override
     public String toString(){
