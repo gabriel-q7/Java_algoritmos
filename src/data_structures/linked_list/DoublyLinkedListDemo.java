@@ -5,10 +5,11 @@ public class DoublyLinkedListDemo {
 
         DoublyLinkedList dList = new DoublyLinkedList();
 
-        dList.insertAtHead(4);
-        dList.insertAtHead(7);
-        dList.insertAtHead(42);
-
+        dList.insertAtTail(4);
+        dList.insertAtTail(7);
+        dList.insertAtTail(42);
+        dList.insertAtHead(5);
+        //5,4,7,42
         System.out.println(dList);
     }
 }

@@ -12,7 +12,7 @@ public class DoublyLinkedList {
         DoublyLinkedNode current = this.head;
         while(current != null){
             length++;
-            current.getNextNode();
+            current = current.getNextNode();
         }
         return length;
     }
@@ -30,7 +30,6 @@ public class DoublyLinkedList {
             this.head.setPrevNode(newNode);
             newNode.setNextNode(this.head);
         }
-
         this.head = newNode;
     }
 
@@ -43,14 +42,12 @@ public class DoublyLinkedList {
             this.tail.setNextNode(newNode);
             newNode.setPrevNode(this.tail);
         }
-
         this.tail = newNode;
     }
 
     public void insert(int data){
 
     }
-
 
     @Override
     public String toString(){
@@ -61,6 +58,8 @@ public class DoublyLinkedList {
             result += current + ", ";
             current = current.getNextNode();
         }
+        //Remove ultima virgula
+        result = result.substring(0, result.length()-2);
         result += "}";
         return result;
     }
