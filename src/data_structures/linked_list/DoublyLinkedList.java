@@ -27,10 +27,10 @@ public class DoublyLinkedList {
         if (isEmpty()) {
             tail = newNode;
         } else {
-            this.head.setPrevNode(newNode);
+            head.setPrevNode(newNode);
             newNode.setNextNode(this.head);
         }
-        this.head = newNode;
+        head = newNode;
     }
 
     public void insertAtTail(int data){
@@ -39,10 +39,10 @@ public class DoublyLinkedList {
         if(isEmpty()){
             head = newNode;
         } else {
-            this.tail.setNextNode(newNode);
+            tail.setNextNode(newNode);
             newNode.setPrevNode(this.tail);
         }
-        this.tail = newNode;
+        tail = newNode;
     }
 
     public void insert(int data){
