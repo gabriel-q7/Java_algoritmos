@@ -28,7 +28,7 @@ public class DoublyLinkedList {
             tail = newNode;
         } else {
             head.setPrevNode(newNode);
-            newNode.setNextNode(this.head);
+            newNode.setNextNode(head);
         }
         head = newNode;
     }
@@ -40,7 +40,7 @@ public class DoublyLinkedList {
             head = newNode;
         } else {
             tail.setNextNode(newNode);
-            newNode.setPrevNode(this.tail);
+            newNode.setPrevNode(tail);
         }
         tail = newNode;
     }
