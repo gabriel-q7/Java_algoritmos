@@ -36,6 +36,7 @@ public class Queue {
     }
 
     public QueueNode enqueue(int data){
+        //insert to the end
         QueueNode newNode = new QueueNode(data);
 
         if(isEmpty()) {
@@ -48,6 +49,7 @@ public class Queue {
     }
 
     public QueueNode dequeue(){
+        //remove from the head
         QueueNode current = this.head;
         this.head = this.head.getNextNode();
         return current;
